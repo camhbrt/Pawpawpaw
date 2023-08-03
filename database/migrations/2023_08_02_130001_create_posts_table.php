@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("userid");
-            // $table->foreign("userid")->references("id")->on("users")->onDelete("cascade");
+            $table->foreign("userid")->references("id")->on("users")->onDelete("cascade");
             $table->timestamps();
             $table->text("postdescription");
             $table->text("posttitle");
