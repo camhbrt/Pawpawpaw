@@ -26,11 +26,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::get('/userpage', [PostsController::class, 'displayUserPosts']);
+    Route::post('/createPost',[PostsController::class, 'createPost']);
 });
 
 
 Route::get('/posts', [PostsController::class, 'index']);
 
-// Route::get('/home', [PostsController::class, 'displayPosts']);
 
 require __DIR__.'/auth.php';
