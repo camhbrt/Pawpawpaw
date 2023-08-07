@@ -60,5 +60,10 @@ public function createPost(Request $request){
         return redirect('/home')->with('Post modifié');
 
     }
+
+    public function deletePost (Post $post){
+        $post->delete();
+        return redirect('/home');
+    }
 }
  

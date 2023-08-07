@@ -14,12 +14,12 @@
                 <p>{{$post['postdescription']}}</p>
 
                 <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
-                
+                <p>{{ $post->id }}</p> 
 		        <form action="/delete-post/{{$post->id}}" method="POST">
 			        @csrf
 			        @method('DELETE')
 			    <button>Delete</button>
-
+                </form>
             </div>
         @endforeach
     </div>
