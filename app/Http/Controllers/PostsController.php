@@ -34,10 +34,31 @@ public function createPost(Request $request){
 
     }
 
-    // public function displayUserPosts(){
-    //     $posts=[];
-    //     $posts = Post::where('userid',auth()->id())->get();
-    //     return view('userpage', ['posts' => $posts]);
-    // }
+    public function displayUserPosts(){
+        $posts=[];
+        $posts = auth()->user()->userPosts()->latest()->get();
+        return view('userpage', ['posts' => $posts]);
+    }
+
+    public function showEditPost(Post $post){
+        return view('edit-post', ['post' => $post]);
+    }
+
+    public function updatePost(Post $post, Request $request) {
+        $validatedData=$request->validate([
+            'posttitle'=> ['required'],
+            'postdescription'=>['required']
+        ]);
+    
+    
+        $validatedData['posttitle']=strip_tags($validatedData['posttitle']);
+        $validatedData['postdescription']=strip_tags($validatedData['postdescription']);
+        // $validatedData['userid'] = auth()->id();
+    
+        $post->update($validatedData);
+    
+        return redirect('/home')->with('Post modifié');
+
+    }
 }
  
