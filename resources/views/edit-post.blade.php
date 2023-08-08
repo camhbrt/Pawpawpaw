@@ -14,6 +14,7 @@
         @method('PUT')
         <input type="text" name="posttitle" value="{{$post->posttitle}}">
         <textarea name="postdescription">{{$post->postdescription}}</textarea>
+        <div></div>
     <button>Save Changes</button>
     </form>
 

@@ -47,7 +47,8 @@ public function createPost(Request $request){
     public function updatePost(Post $post, Request $request) {
         $validatedData=$request->validate([
             'posttitle'=> ['required'],
-            'postdescription'=>['required']
+            'postdescription'=>['required'],
+            'imagePath'=>['required']
         ]);
     
     

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->text("postdescription");
             $table->text("posttitle");
-            
+            $table->text('image_path');
+        
         });
     }
 
