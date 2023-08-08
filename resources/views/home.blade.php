@@ -12,22 +12,22 @@
 
 @section('content')
 
-        <div class='flex justify-between'>
-            <div class='bg-rose-800 justify-between flex flex-col fixed h-full'>
-                <h1 class='text-yellow-50' >PawPawPaw</h1>
+        <div class=''>
+            <div class='bg-rose-800 justify-between flex flex-col fixed h-full p-8'>
+                <h1 class='text-yellow-50 font-custom text-3xl' >PawPawPaw</h1>
                 <div class='flex flex-col '>
                     <h1 class='text-yellow-50'>Actualités</h1>
                     <h1 class='text-yellow-50'>Créer un nouveau post</h1>
                     <h1 class='text-yellow-50'>Voir mon profil</h1>
                 </div>
-                <div class=''>Se déconnecter</div>
+                <div class='text-yellow-50'>Se déconnecter</div>
             </div>
-            <div class='bg-yellow-50'>
+            <div class='bg-yellow-50 text-pink-950 pl-44 p-10'>
                 @foreach($posts as $post)
-                    <div>
-                        <h3>{{$post['posttitle']}}</h3>
+                    <div class="bg-yellow-100 m-24 rounded-lg p-10">
+                        <h3 class="text-pink-950" >{{$post['posttitle']}}</h3>
                         <p>{{$post['postdescription']}}</p>
-                        <img class="h-80" src="{{$post['image_path']}}" alt="{{$post['posttitle']}}"></img>
+                        <img class="h-80" src="{{$post['image_path']}}" alt="{{$post['posttitle']}}">
                     </div>
                 @endforeach
             </div>
