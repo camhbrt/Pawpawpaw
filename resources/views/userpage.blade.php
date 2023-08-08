@@ -12,6 +12,7 @@
             <div>
                 <h3>{{$post['posttitle']}}</h3>
                 <p>{{$post['postdescription']}}</p>
+                <img src="{{$post['image_path']}}" alt="{{$post['posttitle']}}"></img>
 
                 <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
                 <p>{{ $post->id }}</p> 
