@@ -28,16 +28,25 @@
                 </form>
             </div>
             <div class='bg-yellow-50 text-pink-950 pl-44 p-10'>
+                <h1 class="indent-20 font-bold text-xl">Actualités</h1>
                 @foreach($posts as $post)
-                    <div class="bg-yellow-100 m-24 rounded-lg p-10">
-                        <h3 class="text-pink-950" >{{$post['posttitle']}}</h3>
-                        <p>{{$post['postdescription']}}</p>
-                        <img class="h-80" src="{{$post['image_path']}}" alt="{{$post['posttitle']}}">
-                    </div>
+                <div class="bg-yellow-100 m-24 rounded-lg p-10 flex flex-row">
+                        <img class="h-80 w-80 bg-yellow-300" src="{{$post['image_path']}}" alt="{{$post['posttitle']}}">
+                        <div class="text-right align-middle">
+                            <div class="flex flex-row">
+
+                                <h3 class="text-pink-950" >{{$post['posttitle']}}</h3>
+                                <p class="text-pink-950 ">{{$post['userid']}}</p>
+                            </div>
+                            <p>{{$post['postdescription']}}</p>
+                            <p class="bottom-0 right-0 ">{{$post['created_at']}}
+                        </div>
+                </div>
                 @endforeach
             </div>
         </div>
 
 
 @endsection
+
 
