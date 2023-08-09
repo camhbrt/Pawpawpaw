@@ -17,8 +17,8 @@
                 <h1 class='text-yellow-50 font-custom text-3xl' >PawPawPaw</h1>
                 <div class='flex flex-col justify-between'>
                     <h1 class='text-yellow-50'>Actualités</h1>
-                    <h1 class='text-yellow-50'>Créer un nouveau post</h1>
-                    <h1 class='text-yellow-50'>Voir mon profil</h1>
+                    <a href='' class='text-yellow-50'>Créer un nouveau post</a>
+                    <a href='/userpage'class='text-yellow-50'>Voir mon profil</a>
                 </div>
                 <a class="text-yellow-50" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     Se déconnecter
