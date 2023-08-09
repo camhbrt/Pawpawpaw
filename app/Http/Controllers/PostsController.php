@@ -66,5 +66,9 @@ public function createPost(Request $request){
         $post->delete();
         return redirect('/home');
     }
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
  
