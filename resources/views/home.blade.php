@@ -12,10 +12,10 @@
 
 @section('content')
 
-        <div class=''>
-            <div class='bg-rose-800 justify-between flex flex-col fixed h-full p-8'>
+        <div class='flex flex-row'>
+            <div class='bg-rose-800 justify-between flex flex-col fixed h-screen p-8'>
                 <h1 class='text-yellow-50 font-custom text-3xl' >PawPawPaw</h1>
-                <div class='flex flex-col '>
+                <div class='flex flex-col justify-between'>
                     <h1 class='text-yellow-50'>Actualités</h1>
                     <h1 class='text-yellow-50'>Créer un nouveau post</h1>
                     <h1 class='text-yellow-50'>Voir mon profil</h1>
