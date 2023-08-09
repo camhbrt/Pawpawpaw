@@ -20,7 +20,12 @@
                     <h1 class='text-yellow-50'>Créer un nouveau post</h1>
                     <h1 class='text-yellow-50'>Voir mon profil</h1>
                 </div>
-                <div class='text-yellow-50'>Se déconnecter</div>
+                <a class="text-yellow-50" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Se déconnecter
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
             <div class='bg-yellow-50 text-pink-950 pl-44 p-10'>
                 @foreach($posts as $post)

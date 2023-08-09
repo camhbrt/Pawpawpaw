@@ -1,4 +1,8 @@
 <x-guest-layout>
+
+    <h1 class="text-red-500 font-custom text-6xl">Pawpawpaw</h1>
+    <h2 class="text-red-500 font-custom2 text-3xl">Your daily dose of paw-sitivity !</h2>
+    
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 

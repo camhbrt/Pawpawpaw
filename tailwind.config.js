@@ -18,7 +18,8 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                custom: ['Cherry Bomb One', 'sans-serif']
+                custom: ['Cherry Bomb One', 'sans-serif'],
+                custom2: ['Darumadrop One', 'sans-serif']
             },
         },
     },
