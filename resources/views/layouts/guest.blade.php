@@ -37,10 +37,10 @@
                     {{ $slot }}
                 </div>
             </div>
-            <div class="bg-yellow-50 basis-1/2">
-                <div class="absolute right-8 top-10 ">
+            <div class="bg-yellow-50 basis-1/2 relative">
+                <div class="left-3/4 top-10 absolute">
                     <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                        viewBox="0 0 48.839 48.839" xml:space="preserve" style="transform: rotate(-45deg)">
+                        viewBox="0 0 48.839 48.839" xml:space="preserve" style="transform: rotate(20deg)">
                     <g>
                     <path style="fill:#ef4444;" d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
                         c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
@@ -56,9 +56,13 @@
                     </svg>
                 </div>
 
-                <div>
+                <img class="absolute h-60 top-1/4 left-1/4 border-4 border-rose-800" src="/pictures/chiots.jpg" alt="photo de chiots" style="transform: rotate(-15deg)">
+
+                <img class="absolute h-72 top-1/3 left-1/2 border-4 border-rose-800 " src="/pictures/loutre.jpg" alt="photo de loutre" style="transform: rotate(10deg)">
+
+                <div class="left-10 bottom-10 absolute">
                     <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                        viewBox="0 0 48.839 48.839" xml:space="preserve" style="transform: rotate(-45deg)">
+                        viewBox="0 0 48.839 48.839" xml:space="preserve" style="transform: rotate(-25deg)">
                     <g>
                     <path style="fill:#ef4444;" d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
                         c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
