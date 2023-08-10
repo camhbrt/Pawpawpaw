@@ -83,5 +83,10 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/home');
     }
+
+    
+    public function user() {
+        return $this->belongsTo(User::class, 'userid');
+    }
 }
  
