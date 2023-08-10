@@ -13,12 +13,12 @@
 @section('content')
 
         <div class='flex flex-row'>
-            <div class='bg-rose-800 justify-between flex flex-col fixed h-screen p-8'>
+            <div class='bg-rose-800 justify-between flex flex-col h-screen p-8'>
                 <h1 class='text-yellow-50 font-custom text-3xl' >PawPawPaw</h1>
                 <div class='flex flex-col justify-between'>
                     <h1 class='text-yellow-50'>Actualités</h1>
-                    <a href='' class='text-yellow-50'>Créer un nouveau post</a>
-                    <a href='/userpage'class='text-yellow-50'>Voir mon profil</a>
+                    <a href='/createPost' class='text-yellow-50'>Créer un nouveau post</a>
+                    <a href='/userpage' class='text-yellow-50'>Voir mon profil</a>
                 </div>
                 <a class="text-yellow-50" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     Se déconnecter
@@ -29,7 +29,7 @@
             </div>
             <div class='bg-yellow-50 text-pink-950 pl-44 p-10'>
                 @foreach($posts as $post)
-                    <div class="bg-yellow-100 m-24 rounded-lg p-10">
+                    <div class="bg-yellow-100 rounded-lg p-10">
                         <h3 class="text-pink-950" >{{$post['posttitle']}}</h3>
                         <p>{{$post['postdescription']}}</p>
                         <img class="h-80" src="{{$post['image_path']}}" alt="{{$post['posttitle']}}">

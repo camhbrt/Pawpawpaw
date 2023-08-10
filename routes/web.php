@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/userpage', [PostsController::class, 'displayUserPosts']);
+    Route::get('/createPost',[PostsController::class, 'goToCreatePostPage']);
     Route::post('/createPost',[PostsController::class, 'createPost']);
     Route::get('/edit-post/{post}', [PostsController::class, 'showEditPost']);
     Route::put('/edit-post/{post}', [PostsController::class, 'updatePost']);
