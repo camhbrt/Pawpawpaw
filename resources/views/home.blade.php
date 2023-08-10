@@ -52,7 +52,7 @@
                 
                 @foreach($posts as $post)
                 <div class="bg-yellow-100 m-24 rounded-xl p-10 flex flex-row">
-                        <img class="h-80 w-80 bg-yellow-300 rounded-lg flex-none" src="{{$post['image_path']}}" alt="{{$post['posttitle']}}">
+                        <img class="h-80 bg-yellow-300 rounded-lg flex-none" src="{{asset('storage/'.$post['image_path'])}}" alt="{{$post['posttitle']}}">
                         <div class="pl-10 grow justify-between">
                             <div class="flex flex-row justify-between text-pink-950">
                                 <h3>{{$post['posttitle']}}</h3>

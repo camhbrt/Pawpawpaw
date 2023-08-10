@@ -24,21 +24,28 @@ class PostsController extends Controller
             'postdescription'=>['required'],
             'image_path'=>['required'],
         ]);
-        $destinationPath='pictures';
-        $uploadedImage=$request->image_path->getClientOriginalName();
-        dd($uploadedImage);
-        
-        // $imagePath=$request->image_path->store('pictures');
-        $imagePath= $request->file('image_path')->move(public_path($destinationPath), $uploadedImage);
-        dd($imagePath);
-        $validatedData['posttitle']=strip_tags($validatedData['posttitle']);
-        $validatedData['postdescription']=strip_tags($validatedData['postdescription']);
-        $validatedData['userid'] = auth()->id();
-        $validatedData['image_path']=$imagePath;
+
+        if($request->hasFile('image_path')){
+            $destinationPath='/pictures';
+            $file=$request->file('image_path');
+            $uploadedImage=$file->getClientOriginalName();
+            
+            // $imagePath=$request->image_path->store('pictures');
+            $imagePath= $file->storeAs($destinationPath, $uploadedImage);
+            
+            $validatedData['posttitle']=strip_tags($validatedData['posttitle']);
+            $validatedData['postdescription']=strip_tags($validatedData['postdescription']);
+            $validatedData['userid'] = auth()->id();
+            $validatedData['image_path']=$imagePath;
 
         Post::create($validatedData);
 
         return redirect('/home')->with('Post créé');
+        }
+        else
+            return response()->json(["message"=>"ce que je veux"]);
+
+        
 
     }
 

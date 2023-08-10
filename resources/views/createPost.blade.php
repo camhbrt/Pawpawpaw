@@ -36,23 +36,23 @@
                 </form>
             </div>
     
-    <form action='/createPost' method='POST' enctype='multipart / form data' class='flex flex-row'>
+    <form action='/createPost' method='POST' enctype="multipart/form-data" class='flex flex-row'>
         @csrf
         <div class='bg-yellow-50 text-pink-950 flex flex-col h-screen p-8'>
             <div class='flex flex-col'>
                 <label for='' >Titre du Post</label>
-                <input name='posttitle' type='text' placeholder="title">
+                <input name='posttitle' type='text' placeholder="title"/>
             </div>
             <div class='flex flex-col'>
                 <label for='' >Description du Post</label>
                 <textarea name='postdescription' type='text' placeholder="description"></textarea>
             </div>
             <div class='flex flex-col'>
-                <label for='' >Image à charger</label>
-                <input name='image_path' type='file'>
+                <label for='image_path' >Image à charger</label>
+                <input name='image_path' type='file'/>
             </div>
             </br>
-            <button class="bg-red-500 rounded " type='submit'>Publier le Post</button>
+            <button class="bg-red-500 rounded" type='submit'>Publier le Post</button>
 
         </div>
     </form>
