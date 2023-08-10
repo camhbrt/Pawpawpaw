@@ -12,22 +12,35 @@ class PostsController extends Controller
         return view('home', ['posts' => $posts]);
     }
 
-public function createPost(Request $request){
-    $validatedData=$request->validate([
-        'posttitle'=> ['required'],
-        'postdescription'=>['required']
-    ]);
+    public function goToCreatePostPage(){
+        return view('createPost');
+    }
+
+    public function createPost(Request $request){
 
 
-    $validatedData['posttitle']=strip_tags($validatedData['posttitle']);
-	$validatedData['postdescription']=strip_tags($validatedData['postdescription']);
-	$validatedData['userid'] = auth()->id();
+        $validatedData=$request->validate([
+            'posttitle'=> ['required'],
+            'postdescription'=>['required'],
+            'image_path'=>['required'],
+        ]);
+        $destinationPath='pictures';
+        $uploadedImage=$request->image_path->getClientOriginalName();
+        dd($uploadedImage);
+        
+        // $imagePath=$request->image_path->store('pictures');
+        $imagePath= $request->file('image_path')->move(public_path($destinationPath), $uploadedImage);
+        dd($imagePath);
+        $validatedData['posttitle']=strip_tags($validatedData['posttitle']);
+        $validatedData['postdescription']=strip_tags($validatedData['postdescription']);
+        $validatedData['userid'] = auth()->id();
+        $validatedData['image_path']=$imagePath;
 
-    Post::create($validatedData);
+        Post::create($validatedData);
 
-    return redirect('/home')->with('Post créé');
+        return redirect('/home')->with('Post créé');
 
-}
+    }
 
     public function index (){
         echo "post";
@@ -48,17 +61,21 @@ public function createPost(Request $request){
         $validatedData=$request->validate([
             'posttitle'=> ['required'],
             'postdescription'=>['required'],
-            'imagePath'=>['required']
+            'image'=>['max:4096']
         ]);
     
-    
-        $validatedData['posttitle']=strip_tags($validatedData['posttitle']);
-        $validatedData['postdescription']=strip_tags($validatedData['postdescription']);
+        $destionationPath='pictures';
+        $uploadedImage=$request()->image->getClientOriginalName();
+        dd($uploadedImage);
+        // $imagePath=$request->image->move(public_path($destinationPath), $uploadedImage);
+        // $validatedData['posttitle']=strip_tags($validatedData['posttitle']);
+        // $validatedData['postdescription']=strip_tags($validatedData['postdescription']);
         // $validatedData['userid'] = auth()->id();
+        // $validatedData['image']=$imagePath;
     
-        $post->update($validatedData);
+        // $post->update($validatedData);
     
-        return redirect('/home')->with('Post modifié');
+        // return redirect('/home')->with('Post modifié');
 
     }
 

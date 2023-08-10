@@ -35,8 +35,8 @@
                 </div>
                 <div class='flex flex-col justify-between'>
                     <a href='/home' class='text-yellow-50 py-4 hover:text-orange-300'>Actualités</a>
-                    <a href='' class='text-yellow-50 py-4 hover:text-orange-300'>Créer un nouveau post</a>
-                    <a href='/userpage'class='text-yellow-50 py-4 hover:text-orange-300'>Voir mon profil</a>
+                    <a href='/createPost' class='text-yellow-50 py-4 hover:text-orange-300'>Créer un nouveau post</a>
+                    <a href='/userpage' class='text-yellow-50 py-4 hover:text-orange-300'>Voir mon profil</a>
                 </div>
                 <a class="text-yellow-50 hover:text-orange-300" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     Se déconnecter
