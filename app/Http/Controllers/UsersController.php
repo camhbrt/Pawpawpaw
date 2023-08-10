@@ -10,7 +10,7 @@ class UsersController extends Controller
     public function displayOtherUsersPosts($id){
         
         $user = User::findOrFail($id);
-        $posts = $user->posts()->latest()->get();
+        $posts = $user->userPosts()->latest()->get();
 
         return view('otherusers', compact('user', 'posts'));
         
