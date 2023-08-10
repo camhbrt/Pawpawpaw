@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-post/{post}', [PostsController::class, 'showEditPost']);
     Route::put('/edit-post/{post}', [PostsController::class, 'updatePost']);
     Route::delete('/delete-post/{post}', [PostsController::class, 'deletePost']);
-    Route::get('/user/{id}', [UsersController::class,'displayOtherUsersPosts']);
+    Route::get('/user/{id}', [UsersController::class,'displayOtherUsersPosts'])->name('displayOtherUsersPosts');
 
 });
 

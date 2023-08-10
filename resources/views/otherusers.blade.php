@@ -58,7 +58,7 @@
                         <div class="pl-10 grow justify-between">
                             <div class="flex flex-row justify-between text-pink-950">
                                 <h3>{{$post['posttitle']}}</h3>
-                                <p>{{$post['userid']}}</p>
+                                <p>{{$user['name'] }}</p>
                             </div>
                             <p class="">{{$post['postdescription']}}</p>
                             <p class="bottom-0 right-0 ">créé le {{$post['created_at']}} </p>
