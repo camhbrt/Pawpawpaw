@@ -15,7 +15,8 @@ class Post extends Model
         'userid'
         
     ];
-    public function user():HasOne{
-        return $this->hasOne(User::class);
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'userid');
     }
  }
